@@ -1,0 +1,313 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, dl, dt, dd, ol, nav ul, nav li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+ol, ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/*-- start editing from here --*/
+
+a {
+    text-decoration: none;
+}
+
+.txt-rt {
+    text-align: right;
+}
+
+/* text align right */
+
+.txt-lt {
+    text-align: left;
+}
+
+/* text align left */
+
+.txt-center {
+    text-align: center;
+}
+
+/* text align center */
+
+.float-rt {
+    float: right;
+}
+
+/* float right */
+
+.float-lt {
+    float: left;
+}
+
+/* float left */
+
+.clear {
+    clear: both;
+}
+
+/* clear float */
+
+.pos-relative {
+    position: relative;
+}
+
+/* Position Relative */
+
+.pos-absolute {
+    position: absolute;
+}
+
+/* Position Absolute */
+
+.vertical-base {
+    vertical-align: baseline;
+}
+
+/* vertical align baseline */
+
+.vertical-top {
+    vertical-align: top;
+}
+
+.abyss {
+    width: 28%;
+    margin-left: 35%;
+    margin-right: 35%;
+    margin-top: -5%;
+}
+
+h3 {
+    font-size: 1.5em;
+    text-align: center;
+    color: #fff;
+    font-weight: 100;
+    text-transform: capitalize;
+    letter-spacing: 4px;
+    font-family: 'Roboto', sans-serif;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.tentacule {
+    animation: tentacule 1s cubic-bezier(0.55, 0.01, 0.60, 0.99) infinite alternate;
+    perspective: 100px;
+}
+
+@keyframes tentacule {
+    to {
+        transform: translateX(-30px);
+    }
+}
+
+#poisson {
+    animation: poisson 1s cubic-bezier(0.55, 0.01, 0.60, 0.99) infinite alternate;
+    perspective: 100px;
+}
+
+@keyframes poisson {
+    to {
+        transform: translateX(-120px);
+    }
+    to {
+        transform: translateX(400px);
+    }
+}
+
+#lumiere {
+    animation: lumiere 1s cubic-bezier(0.55, 0.01, 0.60, 0.99) infinite alternate;
+    perspective: 100px;
+}
+
+@keyframes lumiere {
+    to {
+        transform: translateX(-120px);
+    }
+    to {
+        transform: translateX(400px);
+    }
+}
+
+#petitpoisson {
+    animation: petitpoisson 1s cubic-bezier(0.55, 0.01, 0.60, 0.99) infinite alternate;
+    perspective: 100px;
+}
+
+@keyframes petitpoisson {
+    to {
+        transform: translateX(-120px);
+    }
+}
+
+body {
+    background: #160161;
+    /* fallback for old browsers */
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Roboto', sans-serif;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background: -webkit-linear-gradient(to top, #000000, #181B48, #72B8C7);
+    background: -moz-linear-gradient(to top, #000000, #181B48, #72B8C7);
+    background: -o-linear-gradient(to top, #000000, #181B48, #72B8C7);
+    background: linear-gradient(to top, #000000, #181B48, #72B8C7);
+    overflow: hidden;
+}
+
+.ocean {
+    height: 5%;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #015871;
+}
+
+.wave {
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg) repeat-x;
+    position: absolute;
+    top: -198px;
+    bottom: 100px;
+    width: 6400px;
+    height: 198px;
+    animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite;
+    transform: translate3d(0, 0, 0);
+}
+
+.wave:nth-of-type(2) {
+    top: -175px;
+    bottom: 100px;
+    animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 7s ease -1.25s infinite;
+    opacity: 1;
+}
+
+@keyframes wave {
+    0% {
+        margin-left: 0;
+    }
+    100% {
+        margin-left: -1600px;
+    }
+}
+
+@keyframes swell {
+    0%, 100% {
+        transform: translate3d(0, -25px, 0);
+    }
+    50% {
+        transform: translate3d(0, 5px, 0);
+    }
+}
+
+.error {
+    width: 400px;
+    height: 230px;
+    margin-left: 35%;
+}
+
+.bulles img {
+	width: 50px;
+	animation: bulles 7s linear infinite;
+}
+
+.bulles {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	position: absolute;
+	bottom: -100%;
+}
+
+@keyframes bulles {
+	0% {
+		transform: translateY(0);
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	70% {
+		opacity: 1;
+	}
+	80% {
+		opacity: 0.5;
+	}
+	100% {
+		transform: translateY(-150vh);
+		opacity: 0;
+	}
+}
+
+.bulles img:nth-child(1) {
+	animation-delay: 2s;
+	width: 25px;
+	height: 25px;
+}
+.bulles img:nth-child(2) {
+	animation-delay: 1s;
+	height: 47px;
+}
+.bulles img:nth-child(3) {
+	animation-delay: 3s;
+	width: 25px;
+	height: 25px;
+}
+.bulles img:nth-child(4) {
+	animation-delay: 4.5s;
+	height: 47px;
+}
+.bulles img:nth-child(5) {
+	animation-delay: 3s;
+	height: 47px;
+}
+.bulles img:nth-child(6) {
+	animation-delay: 6s;
+	width: 20px;
+	height: 20px;
+}
+.bulles img:nth-child(7) {
+	animation-delay: 7s;
+	width: 35px;
+	height: 35px;
+}
+
+.d {
+	position: fixed;
+	width: 100%;
+}
+

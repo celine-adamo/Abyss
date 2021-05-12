@@ -1,0 +1,83 @@
+body {
+	background: #160161;
+	/* fallback for old browsers */
+	background: -webkit-linear-gradient(to top, #000000, #181b48, #72b8c7);
+	background: -moz-linear-gradient(to top, #000000, #181b48, #72b8c7);
+	background: -o-linear-gradient(to top, #000000, #181b48, #72b8c7);
+	background: linear-gradient(to top, #000000, #181b48, #72b8c7);
+	background-size: cover;
+	background-attachment: fixed;
+	font-family: 'Roboto', sans-serif;
+}
+
+.bulles img {
+	width: 50px;
+	animation: bulles 7s linear infinite;
+}
+
+.bulles {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	position: absolute;
+}
+
+@keyframes bulles {
+	0% {
+		transform: translateY(0);
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	70% {
+		opacity: 1;
+	}
+	80% {
+		opacity: 0.5;
+	}
+	100% {
+		transform: translateY(-150vh);
+		opacity: 0;
+	}
+}
+
+.bulles img:nth-child(1) {
+	animation-delay: 2s;
+	width: 25px;
+	height: 25px;
+}
+.bulles img:nth-child(2) {
+	animation-delay: 1s;
+	height: 47px;
+}
+.bulles img:nth-child(3) {
+	animation-delay: 3s;
+	width: 25px;
+	height: 25px;
+}
+.bulles img:nth-child(4) {
+	animation-delay: 4.5s;
+	height: 47px;
+}
+.bulles img:nth-child(5) {
+	animation-delay: 3s;
+	height: 47px;
+}
+.bulles img:nth-child(6) {
+	animation-delay: 6s;
+	width: 20px;
+	height: 20px;
+}
+.bulles img:nth-child(7) {
+	animation-delay: 7s;
+	width: 35px;
+	height: 35px;
+}
+
+.d {
+	position: fixed;
+	width: 100%;
+}
+

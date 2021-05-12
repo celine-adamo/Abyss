@@ -1,0 +1,23 @@
+{% extends "template.html.twig" %}
+
+{% block css %}
+	<link rel="stylesheet" href="{{ baseUrl }}/assets/css/thumbnails.css">
+	<link rel="stylesheet" href="{{ baseUrl }}/assets/css/bulles.css">
+{% endblock %}
+
+{% block body %}
+	<section>
+		<div class="row">
+			<h3>Tous les films</h3>
+			{% for movie in movies %}
+				<figure class="snip1104">
+					<img src="{{ baseUrl }}/assets/img/films/{{ movie.img }}" alt="Affiche du film : {{ movie.title }}" />
+					<figcaption>
+						<h2>{{ movie.title }}</h2>
+					</figcaption>
+					<a href="{{ baseUrl }}/film/{{ movie.id }}"></a>
+				</figure>
+			{% endfor %}
+		</div>
+	</section>
+{% endblock %}

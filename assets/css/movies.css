@@ -1,0 +1,214 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, dl, dt, dd, ol, nav ul, nav li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* horizontal menu */
+
+
+/*-- end reset --*/
+
+body {
+  background: #160161;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #000000, #181B48, #72B8C7);
+  background: -moz-linear-gradient(to top, #000000, #181B48, #72B8C7);
+  background: -o-linear-gradient(to top, #000000, #181B48, #72B8C7);
+  background: linear-gradient(to top, #000000, #181B48, #72B8C7);
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: 'Roboto', sans-serif;
+}
+
+h3 {
+  font-size: 1.5em;
+  text-align: center;
+  color: #fff;
+  font-weight: 100;
+  text-transform: capitalize;
+  letter-spacing: 4px;
+  font-family: 'Roboto', sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+/*.films {*/
+/*  margin-top: 19%;*/
+/*}*/
+
+/*--NavBar--*/
+
+header {
+  height: 5vh;
+  background-size: cover;
+}
+
+nav {
+  height: 25vh;
+  background-size: cover;
+  position: fixed;
+  line-height: 60px;
+  z-index: 100;
+}
+
+nav ul {
+  line-height: 20px;
+  list-style: none;
+  background: rgba(0, 0, 0, 0);
+  overflow: hidden;
+  color: #fff;
+  padding: 0;
+  text-align: right;
+  margin: 0;
+  transition: 1s;
+  text-shadow: 0.1em 0.1em 0.2em black;
+}
+
+nav.black ul {
+  background: #2B292A;
+}
+
+nav ul li {
+  display: inline-block;
+  padding: 10px 30px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+}
+
+.abyss {
+  height:100%;
+  width: 100%;
+}
+
+.abyss404{
+  height:50%;
+  width: 50%;
+  margin-left: 30%;
+}
+
+.abyss404form{
+  margin-right: 10%;
+
+
+}
+
+.mef {
+  display: block;
+  padding: .375rem .80rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #9e1212;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: .25rem;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+
+/*-- responsive --*/
+
+@media(max-width:991px) {
+  h3 {
+    font-size: 2.4em;
+  }
+  .main-w3layouts {
+    padding: 2em 0 1em;
+  }
+  .films {
+    margin-top: 60%;
+  }
+}
+
+@media(max-width:900px) {
+  .main-agileinfo {
+    width: 58%;
+  }
+  .films {
+    margin-top: 60%;
+  }
+}
+
+@media(max-width:800px) {
+  h3 {
+    font-size: 2.2em;
+  }
+}
+
+@media(max-width:736px) {
+  .films {
+    margin-top: 60%;
+  }
+}
+
+@media(max-width:600px) {
+  h3 {
+    font-size: 2em;
+    letter-spacing: 3px;
+  }
+  .films {
+    margin-top: 60%;
+  }
+}
+
+@media(max-width:568px) {
+  .films {
+    margin-top: 60%;
+  }
+}
+
+@media(max-width:480px) {
+  h3 {
+    font-size: 1.8em;
+    letter-spacing: 3px;
+  }
+  .films {
+    margin-top: 60%;
+  }
+}
+
+@media(max-width:414px) {
+  h1 {
+    font-size: 1.8em;
+    letter-spacing: 2px;
+  }
+  .films {
+    margin-top: 60%;
+  }
+}
+
+@media(max-width:384px) {
+  .films {
+    margin-top: 60%;
+  }
+}
+
+@media(max-width:375px) {
+  .films {
+    margin-top: 60%;
+  }
+}
+
+@media(max-width:320px) {
+  h3 {
+    font-size: 1.7em;
+    letter-spacing: 0px;
+  }
+  .films {
+    margin-top: 60%;
+  }
+}

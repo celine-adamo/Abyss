@@ -1,0 +1,53 @@
+{% extends "template.html.twig" %}
+{% block css %}
+	<link rel="stylesheet" href="{{ baseUrl }}/assets/css/inscription.css">
+{% endblock %}
+
+{% block body %}
+	<div class="main-w3layouts wrapper">
+		<h3>Inscription</h3>
+		<div class="main-agileinfo">
+			<div class="agileits-top">
+				<form action="#" method="post">
+					{% if errors.username is defined or errors.email is defined
+                        or errors.confirmPassword is defined or errors.confirmation is defined %}
+						<div class="alert alert-danger">
+							<ul>
+								{% for error in errors %}
+									<li class="text-center">{{ error }}</li>
+								{% endfor %}
+							</ul>
+						</div>
+					{% endif %}
+
+					{% if success.confirmationMessage is defined or success.confirmation is defined %}
+						<div class="alert alert-success">
+							<ul>
+								{% for good in success %}
+									<li class="text-center">{{ good }}</li>
+								{% endfor %}
+							</ul>
+						</div>
+					{% endif %}
+					{% if session.flash.errors is defined %}
+						<div class="alert alert-danger">
+							<ul>
+								{% for error in session.flash.errors %}
+									<li class="text-center">{{ error }}</li>
+								{% endfor %}
+							</ul>
+						</div>
+					{% endif %}
+					<input class="text" type="text" name="username" placeholder="Nom d'utilisateur" required="">
+					<input class="text email" type="email" name="email" placeholder="Email" required="">
+					<input class="text" type="password" name="password" placeholder="Mot de passe" required="">
+					<input class="text w3lpass" type="password" name="confirmPassword" placeholder="Confirmation du mot de passe" required="">
+					<input type="submit" name="submit" value="S'inscrire">
+				</form>
+				<p>Vous avez déjà un compte ?
+					<a class="text-nowrap" href="{{ baseUrl }}/connexion">Connectez-vous !</a>
+				</p>
+			</div>
+		</div>
+	</div>
+{% endblock %}

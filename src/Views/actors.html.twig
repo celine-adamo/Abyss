@@ -1,0 +1,30 @@
+{% extends "template.html.twig" %}
+
+{% block css %}
+	<link rel="stylesheet" href="{{ baseUrl }}/assets/css/thumbnails.css">
+	<link rel="stylesheet" href="{{ baseUrl }}/assets/css/bulles.css">
+{% endblock %}
+
+{% block body %}
+	<section>
+		<div class="row">
+			<h3>Tous les acteurs</h3>
+			{% for actor in actors %}
+				<figure class="snip1104">
+					
+						<img src="{{baseUrl}}/assets/img/artists/{{actor.img}}"  alt="Photo de l'artiste: {{actor.lastname}} {{actor.firstname}}">
+					
+					<figcaption>
+						<h2>
+							<span>{{actor.lastname}}</span>
+							<span>{{actor.firstname}}</span>
+						</h2>
+					</figcaption>
+					<a href="{{baseUrl}}/acteur/{{actor.id}}"></a>
+				</figure>
+			{% endfor %}
+		</div>
+	</section>
+{% endblock %}
+
+

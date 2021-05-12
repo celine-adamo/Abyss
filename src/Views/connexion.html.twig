@@ -1,0 +1,61 @@
+{% extends "template.html.twig" %}
+{% block css %}
+	<link rel="stylesheet" href="{{ baseUrl }}/assets/css/inscription.css">
+{% endblock %}
+
+{% block body %}
+	<div class="main-w3layouts wrapper">
+		<h3>Connexion</h3>
+		<div class="main-agileinfo">
+			<div class="agileits-top">
+
+				<form action="#" method="post">
+					{% if success.confirmationMessage is defined or success.confirmation is defined %}
+						<div class="alert alert-success">
+							<ul>
+								{% for good in success %}
+									<li class="text-center">{{ good }}</li>
+								{% endfor %}
+							</ul>
+						</div>
+					{% endif %}
+					{% if session.flash.errors is defined %}
+						<div class="alert alert-danger">
+							<ul>
+								{% for error in session.flash.errors %}
+									<li class="text-center">{{ error }}</li>
+								{% endfor %}
+							</ul>
+						</div>
+					{% endif %}
+					{% if session.flash.success is defined %}
+						<div class="alert alert-success">
+							<ul>
+								{% for good in session.flash.success %}
+									<li class="text-center">{{ good }}</li>
+								{% endfor %}
+							</ul>
+						</div>
+					{% endif %}
+					<input class="text email" type="text" name="email" placeholder="Email ou Pseudo" required="">
+					<input class="text" type="password" name="password" placeholder="Mot de passe" required="">
+					<div class="wthree-text">
+						<p class="mdp">
+							<a class="text-nowrap" href="{{ baseUrl }}/oublie">Mot de passe oublié</a>
+						</p>
+						<label class="anim">
+							<input type="checkbox" name="remember" class="checkbox">
+							<span>Restez connecté</span>
+						</label>
+						<div class="clear"></div>
+					</div>
+					<input type="submit" name="submit" value="Se connecter">
+				</form>
+				<p>Pas encore de compte ?
+					<a href="{{ baseUrl }}/inscription">Inscrivez-vous !</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

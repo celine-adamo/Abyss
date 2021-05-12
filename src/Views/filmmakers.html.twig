@@ -1,0 +1,28 @@
+{% extends "template.html.twig" %}
+
+{% block css %}
+	<link rel="stylesheet" href="{{ baseUrl }}/assets/css/thumbnails.css">
+	<link rel="stylesheet" href="{{ baseUrl }}/assets/css/bulles.css">
+{% endblock %}
+
+{% block body %}
+	<section>
+		<div class="row">
+			<h3>Tous les réalisateurs</h3>
+			{% for filmmaker in filmmakers %}
+				<figure class="snip1104">
+					
+						<img src="{{baseUrl}}/assets/img/artists/{{filmmaker.img}}"  alt="Photo de l'artiste: {{filmmaker.lastname}} {{filmmaker.firstname}}">
+					
+					<figcaption>
+						<h2>
+							<span>{{filmmaker.lastname}}</span>
+							<span>{{filmmaker.firstname}}</span>
+						</h2>
+					</figcaption>
+					<a href="{{baseUrl}}/auteur/{{filmmaker.id}}"></a>
+				</figure>
+			{% endfor %}
+		</div>
+	</section>
+{% endblock %}

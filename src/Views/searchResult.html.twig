@@ -1,0 +1,48 @@
+{% extends "template.html.twig" %}
+
+{% block css %}
+	<link rel="stylesheet" href="{{ baseUrl }}/assets/css/thumbnails.css">
+	<link rel="stylesheet" href="{{ baseUrl }}/assets/css/bulles.css">
+{% endblock %}
+
+{% block body %}
+	<section>
+		<div class="row">
+			<h3>Résultat de votre recherche</h3>
+			{% for searchMovie in searchResultMovie %}
+
+				<figure class="snip1104">
+					<img src="{{baseUrl}}/assets/img/films/{{searchMovie.img}}" alt="Affiche du film: {{searchMovie.title}}">
+					<figcaption>
+						<h2>
+							<span>{{searchMovie.title}}</span>
+						</h2>
+					</figcaption>
+					<a href="{{baseUrl}}/film/{{searchMovie.id}}"></a>
+				</figure>
+			{% endfor %}
+
+			{% for searchArtist in searchResultArtist %}
+
+				<figure class="snip1104">
+					
+						<img src="{{baseUrl}}/assets/img/artists/{{searchArtist.img}}"  alt="Photo de l'artiste: {{searchArtist.lastname}} {{searchArtist.firstname}}">
+					
+					<figcaption>
+						<h2>
+							<span>{{searchArtist.lastname}}</span>
+							<span>{{searchArtist.firstname}}</span>
+						</h2>
+					</figcaption>
+					{% if searchArtist.id_role == 1 %}
+					<a href="{{baseUrl}}/auteur/{{searchArtist.id}}"></a>
+					
+					{% else %}
+					<a href="{{baseUrl}}/acteur/{{searchArtist.id}}"></a>
+					{% endif %}	
+				</figure>
+			{% endfor %}
+
+		</div>
+	</section>
+{% endblock %}

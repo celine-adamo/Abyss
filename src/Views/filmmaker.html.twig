@@ -1,0 +1,41 @@
+{% extends "template.html.twig" %}
+
+
+{% block title %}
+        Réalisateur | {{ author.firstname }} {{ author.lastname }}
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ baseUrl }}/assets/css/film.css">
+    <link rel="stylesheet" href="{{ baseUrl }}/assets/css/inscription.css">
+{% endblock %}
+
+{% block body %}
+    <div class="row mt-5">
+        {% if author != false %}
+
+        <div class="col-8 offset-md-2">
+            <img src="{{ baseUrl }}/assets/img/artists/{{author.img}}" alt="Photo du réalisateur : {{ author.firstname }} {{ author.lastname }}">
+        </div>
+        <div class="content-bg col-8 offset-md-2 px-4 mb-5">
+            <div class="content-div col-12">
+                <h1 class="titles text-center text-nowrap">{{ author.lastname }} {{ author.firstname }}</h1>
+                <h5 class="titles text-center text-nowrap mt-3">Film(s) :</h5>
+                {% for film in films %}
+                    <p class="text-center mt-3 f-text"><a href="{{ baseUrl }}/film/{{ film.id }}">{{ film.title }}</a></p>
+                {% endfor %}
+                <h5 class="titles2 text-center text-nowrap mt-3">Date de naissance :</h5>
+                
+                    <p class="text-center mt-3">{{ author.birthday }}</p>
+                
+            </div>
+            <div class="content-div col-12 mb-5">
+                <h5 class="titles2 text-center text-lg-start">Biographie :</h5>
+                <p class="col-12 mt-3 f-text">{{ author.biography }}</p>
+            </div>
+        </div>
+        {% else %}
+            <h1>Aucun réalisateur n'a été trouvé</h1>
+        {% endif %}
+    </div>
+{% endblock %}

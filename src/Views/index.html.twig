@@ -1,0 +1,89 @@
+{% extends "template.html.twig" %}
+{% block css %}
+	<link rel="stylesheet" href="{{ baseUrl }}/assets/css/movies.css">
+{% endblock %}
+
+
+{% block body %}
+	<section class="films">
+		<div class="my-5 text-center container">
+			<h3>Les plus grand succès</h3>
+			<div class="films row d-flex align-items-center">
+				<div class="col-1 d-flex">
+					<a href="#carouselExampleIndicators" role="button" data-slide="prev" style="height: 50%; width: 50%">
+						<div class="carousel-nav-icon">
+							<svg xmlns="http://www.w3.org/2000/svg" stroke="white" fill="white" viewbox="0 0 129 129" xmlns:xlink="http://www.w3.org/1999/xlink">
+								<path d="m88.6,121.3c0.8,0.8 1.8,1.2 2.9,1.2s2.1-0.4 2.9-1.2c1.6-1.6 1.6-4.2 0-5.8l-51-51 51-51c1.6-1.6 1.6-4.2 0-5.8s-4.2-1.6-5.8,0l-54,53.9c-1.6,1.6-1.6,4.2 0,5.8l54,53.9z"></path>
+							</svg>
+						</div>
+					</a>
+				</div>
+				<div class="col-10">
+					<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<div class="row">
+									<div class="col-12 col-md d-flex align-items-center justify-content-center">
+										<a href="{{baseUrl}}/film/16">
+											<img src="{{baseUrl}}/assets/img/films/pirates.jpg" class="d-block w-100" alt="l2">
+										</a>
+									</div>
+									<div class="col-12 col-md d-flex align-items-center justify-content-center">
+										<a href="{{baseUrl}}/film/4">
+											<img src="{{baseUrl}}/assets/img/films/aquaman.jpg" class="d-block w-100" alt="l4">
+										</a>
+									</div>
+									<div class="col-12 col-md d-flex align-items-center justify-content-center">
+										<a href="{{baseUrl}}/film/6">
+											<img src="{{baseUrl}}/assets/img/films/gang_de_requins.jpg" class="d-block w-100" alt="l17">
+										</a>
+									</div>
+									<div class="col-12 col-md d-flex align-items-center justify-content-center">
+										<a href="{{baseUrl}}/film/1">
+											<img src="{{baseUrl}}/assets/img/films/sea.jpg" class="d-block w-100" alt="l14">
+										</a>
+									</div>
+								</div>
+							</div>
+							{% for i in 0..4 %}
+								<div class="carousel-item">
+									<div class="row">
+										{% set iterate = i * 4 %}
+										{% for movie in movies |slice(iterate, 4) %}
+											<div class="col-12 col-md d-flex align-items-center justify-content-center">
+												<a href="{{baseUrl}}/film/{{movie.id}}">
+													<img src="{{baseUrl}}/assets/img/films/{{movie.img}}" class="d-block w-100" alt="l1">
+												</a>
+											</div>
+										{% endfor %}
+									</div>
+								</div>
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+				<div class="col-1 d-flex flex-row-reverse">
+					<a href="#carouselExampleIndicators" data-slide="next" style="height: 50%; width: 50%;">
+						<div class="carousel-nav-icon">
+							<svg xmlns="http://www.w3.org/2000/svg" stroke="white" fill="white" viewbox="0 0 129 129" xmlns:xlink="http://www.w3.org/1999/xlink">
+								<path d="m40.4,121.3c-0.8,0.8-1.8,1.2-2.9,1.2s-2.1-0.4-2.9-1.2c-1.6-1.6-1.6-4.2 0-5.8l51-51-51-51c-1.6-1.6-1.6-4.2 0-5.8 1.6-1.6 4.2-1.6 5.8,0l53.9,53.9c1.6,1.6 1.6,4.2 0,5.8l-53.9,53.9z"></path>
+							</svg>
+						</div>
+					</a>
+				</div>
+				<li>
+					<h3>
+						<a href="{{ baseUrl }}/thumbnails">
+							<button class="btn btn-danger" type="submit">Tous les films</button>
+						</a>
+					</h3>
+				</li>
+			</div>
+		</div>
+	</section>
+
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+
+{% endblock %}
